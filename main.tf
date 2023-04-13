@@ -1,7 +1,6 @@
-provider "aws" {
-}
-
 terraform {
+  provider "aws" {
+  }
   cloud {
     organization = "parlemonde"
 

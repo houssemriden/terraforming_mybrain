@@ -3,7 +3,7 @@ terraform {
 	
   required_providers {
 	aws = { 
-		  source  = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "3.26.0"
 	}
   }
@@ -14,6 +14,11 @@ terraform {
       name = "terraform-on-aws"
     }
   }
+}
+
+
+provider "aws" {
+  region = "us-east-1"
 }
 
 variable "port" {

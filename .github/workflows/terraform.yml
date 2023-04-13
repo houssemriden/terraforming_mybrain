@@ -20,3 +20,7 @@ jobs :
         run : terraform --version
       - name : initialiser le travail
         run : terraform init
+      - name :  terraform format
+        run : terraform fmt 
+      - name : deployer l'infra
+        run : terraform apply -auto-approve

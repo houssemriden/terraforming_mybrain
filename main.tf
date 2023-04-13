@@ -26,7 +26,7 @@ variable "port" {
 	default=8080
 }
 resource "aws_instance" "test" {
-	ami = "ami-0ddab716196087271"
+	ami = "ami-06e46074ae430fba6"
 	instance_type="t2.micro"
 	vpc_security_group_ids =["${aws_security_group.sg_terraform.id}"]
 

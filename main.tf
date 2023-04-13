@@ -1,5 +1,9 @@
 
-  provider "aws" {
+terraform {
+	
+  required_providers {
+	aws = { 
+	}
   }
   cloud {
     organization = "parlemonde"
@@ -8,8 +12,7 @@
       name = "terraform-on-aws"
     }
   }
-
-
+}
 
 variable "port" {
 	description = "the port the server will use for http" 

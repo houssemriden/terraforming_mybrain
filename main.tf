@@ -1,6 +1,17 @@
 provider "aws" {
 }
 
+terraform {
+  cloud {
+    organization = "parlemonde"
+
+    workspaces {
+      name = "terraform-on-aws"
+    }
+  }
+}
+
+
 variable "port" {
 	description = "the port the server will use for http" 
 	default=8080

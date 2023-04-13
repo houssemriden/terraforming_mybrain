@@ -1,4 +1,4 @@
-terraform {
+
   provider "aws" {
   }
   cloud {
@@ -8,7 +8,7 @@ terraform {
       name = "terraform-on-aws"
     }
   }
-}
+
 
 
 variable "port" {

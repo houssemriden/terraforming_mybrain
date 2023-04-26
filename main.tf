@@ -17,37 +17,16 @@ terraform {
 }
 
 
-provider "aws" {
-  region = "us-east-1"
-}
-
 variable "port" {
 	description = "the port the server will use for http" 
 	default=8080
 }
 
 
-	user_data = <<EOF
-	 	#! /bin/bash	
-		echo " hello,world" > index.html
-		nohup busybox httpd -f -p "${var.port}" &
-		EOF
-		
-	tags = {
-	name="terraform_configuration"
-	}
+
 
 }
-resource "aws_security_group" "sg_terraform" {
-	name="sg_terraform"
 
-	ingress  { 
-		from_port ="${var.port}"
-		to_port="${var.port}"
-		protocol="tcp"
-		cidr_blocks=["0.0.0.0/0"]
-}
-}
 
 output "publicip"{
 	value="$test.public_ip"

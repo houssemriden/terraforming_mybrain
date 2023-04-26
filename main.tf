@@ -25,10 +25,6 @@ variable "port" {
 	description = "the port the server will use for http" 
 	default=8080
 }
-resource "aws_instance" "test" {
-	ami = "ami-06e46074ae430fba6"
-	instance_type="t2.micro"
-	vpc_security_group_ids =["${aws_security_group.sg_terraform.id}"]
 
 
 	user_data = <<EOF
